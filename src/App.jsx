@@ -1,22 +1,10 @@
 // App.jsx
 
-import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/routes";
 
 const App = () => {
-	const [heading, setHeading] = useState("Magnificent Monkeys");
-
-	const handleClick = () => {
-		setHeading("Radical Rhinos")
-	}
-
-	return (
-		<>
-			<button type="button" onClick={handleClick}>
-				Click Me
-			</button>
-			<h1>{heading}</h1>
-		</>
-	)
+	return <RouterProvider router={router} />;
 }
 
 export default App;
