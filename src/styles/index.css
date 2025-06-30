@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+	--color-night: #020817;
+	--color-blush: #F3F0F1;
+	--color-mint-500: oklch(0.72 0.11 178);
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
