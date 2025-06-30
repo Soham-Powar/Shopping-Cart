@@ -9,14 +9,14 @@ export default function NavLink({ name }) {
 
 	if (!to) {
 		return (
-			<span className="p-3 font-medium text-xl text-gray-400 cursor-not-allowed">
+			<span className="p-3 font-medium text-[17px] text-gray-400 cursor-not-allowed">
 				{name}
 			</span>
 		);
 	}
 
 	return (
-		<Link to={to} className="p-3 font-medium text-xl hover:text-blue-500 transition">
+		<Link to={to} className="p-3 font-medium text-[17px] hover:text-blue-500 transition">
 			{name}
 		</Link>
 	);
