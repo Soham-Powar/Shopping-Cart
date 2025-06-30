@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+@theme {
 	--color-night: #020817;
 	--color-blush: #F3F0F1;
 }
