@@ -23,7 +23,8 @@ body {
 	/* 4. Improve text rendering */
 	-webkit-font-smoothing: antialiased;
 	background-color: var(--color-blush);
-	font-family: 'Noto Sans';
+	font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 /* 5. Improve media defaults */
@@ -75,4 +76,11 @@ h6 {
 #root,
 #__next {
 	isolation: isolate;
+}
+
+/* FONT -  IntegralCF*/
+
+@font-face {
+	font-family: 'integralCF';
+	src: url('../assets/fonts/Fontspring-DEMO-integralcf-heavy.otf') format('opentype');
 }
