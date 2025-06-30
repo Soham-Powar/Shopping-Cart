@@ -1,4 +1,5 @@
 import NavLink from "./NavLink";
+import { ShoppingCart } from "lucide-react";
 
 const NavBar = () => {
 	return (
@@ -10,7 +11,7 @@ const NavBar = () => {
 				<NavLink name="New Arrivals" />
 				<NavLink name="Brands" />
 			</div>
-
+			<ShoppingCart />
 		</nav>
 	)
 }
