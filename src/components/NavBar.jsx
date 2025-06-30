@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import NavLink from "./NavLink";
 
 const NavBar = () => {
 	return (
-		<nav className="bg-white py-5">
-			<Link to="/" className="p-3 font-medium text-xl">Home</Link>
-			<Link to="/shop" className="p-3 font-medium text-xl">Shop</Link>
+		<nav className="bg-white py-5 flex text-2xl font-extrabold p-3 gap-2 justify-around">
+			<p>SHOP.EZ</p>
+			<div>
+				<NavLink name="Home" />
+				<NavLink name="Shop" />
+				<NavLink name="New Arrivals" />
+				<NavLink name="Brands" />
+			</div>
+
 		</nav>
 	)
 }
