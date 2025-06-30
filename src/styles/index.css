@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-@theme {
+:root {
 	--color-night: #020817;
 	--color-blush: #F3F0F1;
-	--color-mint-500: oklch(0.72 0.11 178);
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -23,6 +22,7 @@ body {
 	line-height: 1.5;
 	/* 4. Improve text rendering */
 	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-blush);
 }
 
 /* 5. Improve media defaults */
