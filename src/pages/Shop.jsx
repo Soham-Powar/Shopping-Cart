@@ -1,5 +1,12 @@
+import NavBar from "../components/NavBar";
+
 const Shop = () => {
-	return <div>This is shop</div>
+	return (
+		<>
+			<NavBar />
+			<p>shop</p>
+		</>
+	)
 }
 
 export default Shop;
