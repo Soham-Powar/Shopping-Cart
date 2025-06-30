@@ -1,9 +1,11 @@
-import HeroImg from "./HeroImg"
+import HeroSection from "./HeroSection"
 
 export default function MainContainer() {
 	return (
 		<main>
-			<HeroImg />
+			<section>
+				<HeroSection />
+			</section>
 		</main>
 	)
 }
