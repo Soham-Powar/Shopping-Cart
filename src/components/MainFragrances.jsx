@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import ProductCard from "./ProductCard";
 
 const MainFragrances = () => {
 	const [dataObject, setDataObject] = useState(null);
@@ -27,15 +30,18 @@ const MainFragrances = () => {
 	if (error) return <p>Error: {error}</p>;
 
 	return (
-		<div>
-			<h2 className="text-2xl font-bold mb-4">Fragrances</h2>
-			<ul>
+		<div className="pb-20 pt-16">
+			<h2 className="text-5xl font-[integralCF] pb-12 text-center">FRAGRANCES</h2>
+			<div className="flex flex-wrap gap-6 justify-center">
 				{dataObject?.products?.map((product) => (
-					<li key={product.id} className="mb-2">
-						<strong>{product.title}</strong> — ${product.price}
-					</li>
+					<ProductCard data={product} />
 				))}
-			</ul>
+			</div>
+			<div className="pt-10 flex justify-center">
+				<button className="bg-night text-white px-10 py-3 rounded-2xl">
+					<Link to="/shop">View All</Link>
+				</button>
+			</div>
 		</div>
 	);
 };
