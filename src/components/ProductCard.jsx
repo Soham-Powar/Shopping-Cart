@@ -1,5 +1,4 @@
 export default function ProductCard({ data }) {
-	console.log(data);
 	const productName = data.title;
 	const price = data.price;
 	const productImage = data.images[0];
