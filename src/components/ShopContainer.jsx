@@ -1,9 +1,7 @@
 import Filters from "./Filters";
 import Products from "./Products";
 
-import { useState } from "react";
-const ShopContainer = () => {
-	const [categoryURL, setCategoryURL] = useState("all");
+const ShopContainer = ({ categoryURL, setCategoryURL }) => {
 
 	return (
 		<main className="flex px-60 py-30 gap-5">

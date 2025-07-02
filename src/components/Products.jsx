@@ -55,7 +55,9 @@ const Products = ({ url }) => {
 
 	return (
 		<div className="pb-20 flex-3/4">
-			<h2 className="text-5xl font-[integralCF] pb-12 text-center">{heading}</h2>
+			<h2 className="text-5xl font-[integralCF] pb-12 text-center">
+				{dataObject?.products?.length > 0 ? heading : "No products found"}
+			</h2>
 			<div className="grid grid-cols-3 gap-4">
 				{dataObject?.products?.map((product) => (
 					<ProductCard data={product} key={product.id} />
