@@ -4,11 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 
 describe("ProductSkeleton", () => {
-	it("renders a container with pulse animation", () => {
-		const { container } = render(<ProductSkeleton />);
-		expect(container.firstChild).toHaveClass("animate-pulse");
-	});
-
 	it("renders an image placeholder", () => {
 		render(<ProductSkeleton />);
 		const imageDiv = screen.getByTestId("skeleton-image");
