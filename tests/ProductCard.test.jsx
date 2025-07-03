@@ -1,7 +1,7 @@
 import ProductCard from "../src/components/ProductCard";
 
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 
 
@@ -57,5 +57,30 @@ describe("ProductCard", () => {
 		renderWithRouter(<ProductCard data={data} />);
 		const addToCartButton = screen.getByRole("button", { name: /Add to Cart/i });
 		expect(addToCartButton).toBeInTheDocument();
+	});
+
+	it("calls addToCart when button is clicked", () => {
+		const data = {
+			title: "Test Product",
+			price: 29.99,
+			images: ["https://via.placeholder.com/150"],
+		}
+		const addToCartMock = vi.fn();
+		renderWithRouter(<ProductCard data={data} addToCart={addToCartMock} />);
+		const addToCartButton = screen.getByRole("button", { name: /Add to Cart/i });
+		addToCartButton.click();
+		expect(addToCartMock).toHaveBeenCalledWith(data);
+	});
+
+	it("navigates to product detail page on image click", () => {
+		const data = {
+			id: 1,
+			title: "Test Product",
+			price: 29.99,
+			images: ["https://via.placeholder.com/150"],
+		}
+		renderWithRouter(<ProductCard data={data} />);
+		const productImage = screen.getByAltText("Test Product");
+		expect(productImage.closest('a')).toHaveAttribute('href', `/product/${data.id}`);
 	});
 });
