@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import ProductSkeleton from "./ProductSkeleton";
 
-const Products = ({ url }) => {
+const Products = ({ url, addToCart }) => {
 	const [dataObject, setDataObject] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -60,7 +60,7 @@ const Products = ({ url }) => {
 			</h2>
 			<div className="grid grid-cols-3 gap-4">
 				{dataObject?.products?.map((product) => (
-					<ProductCard data={product} key={product.id} />
+					<ProductCard data={product} key={product.id} addToCart={addToCart} />
 				))}
 			</div>
 		</div>

@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Stars from "./Stars";
 
-const ProductDetails = () => {
+const ProductDetails = ({ addToCart }) => {
 	const { productId } = useParams();
 	console.log(productId);
 
@@ -58,7 +58,7 @@ const ProductDetails = () => {
 						<Stars rating={dataObject.rating} />
 						<p className="text-2xl font-semibold text-night pt-5">${dataObject.price}</p>
 						<p className="text-lg text-gray-700 mb-2 pt-2">{dataObject.description}</p>
-						<button className="mt-4 bg-night text-white px-4 py-2 rounded-xl hover:bg-gray-900 cursor-pointer transition-colors">
+						<button onClick={() => addToCart(dataObject)} className="mt-4 bg-night text-white px-4 py-2 rounded-xl hover:bg-gray-900 cursor-pointer transition-colors">
 							Add to Cart
 						</button>
 					</div>

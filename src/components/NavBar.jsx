@@ -1,6 +1,7 @@
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
 import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ setCategoryURL }) => {
 	return (
@@ -13,7 +14,9 @@ const NavBar = ({ setCategoryURL }) => {
 				<NavLink name="Brands" />
 			</div>
 			<SearchBar setCategoryURL={setCategoryURL} />
-			<ShoppingCart />
+			<Link to="/cart" aria-label="Go to cart">
+				<ShoppingCart className="cursor-pointer" />
+			</Link>
 		</nav>
 	)
 }
