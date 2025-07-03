@@ -1,4 +1,5 @@
 const Cart = ({ cart, removeFromCart }) => {
+	console.log(cart);
 	return (
 		<div className="p-10">
 			<h2 className="text-3xl font-bold mb-6">Your Cart</h2>
@@ -25,5 +26,8 @@ const Cart = ({ cart, removeFromCart }) => {
 		</div>
 	);
 }
+
+// increase quantity if added more times
+//change ui
 
 export default Cart;

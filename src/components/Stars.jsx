@@ -17,12 +17,12 @@ export default function Stars({ rating }) {
 		<div className="flex gap-2">
 			<div className="flex items-center gap-0.5 text-yellow-500">
 				{Array.from({ length: fullStars }).map((_, i) => (
-					<Star key={`full-${i}`} fill="currentColor" stroke="none" size={18} />
+					<Star key={`full-${i}`} fill="currentColor" stroke="none" size={18} data-testid="full-star" />
 				))}
-				{hasHalfStar && <StarHalf key="half" fill="currentColor" stroke="none" size={18} />}
+				{hasHalfStar && <StarHalf key="half" fill="currentColor" stroke="none" size={18} data-testid="half-star" />}
 
 				{Array.from({ length: emptyStars }).map((_, i) => (
-					<Star key={`empty-${i}`} className="text-gray-300" size={18} />
+					<Star key={`empty-${i}`} className="text-gray-300" size={18} data-testid="empty-star" />
 				))}
 			</div>
 			<div className="text-gray-600">({rating})</div>
