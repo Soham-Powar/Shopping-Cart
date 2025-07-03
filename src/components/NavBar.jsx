@@ -3,7 +3,8 @@ import SearchBar from "./SearchBar";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ setCategoryURL }) => {
+const NavBar = ({ cart, setCategoryURL }) => {
+	const noOfProducts = cart.length;
 	return (
 		<nav className="bg-white py-5 flex p-3 gap-2 justify-around items-center border-gray-200 border-b-3">
 			<p className="text-3xl font-extrabold font-[integralCF]">SHOP.EZ</p>
@@ -14,8 +15,13 @@ const NavBar = ({ setCategoryURL }) => {
 				<NavLink name="Brands" />
 			</div>
 			<SearchBar setCategoryURL={setCategoryURL} />
-			<Link to="/cart" aria-label="Go to cart">
-				<ShoppingCart className="cursor-pointer" />
+			<Link to="/cart" aria-label="Go to cart" className="relative">
+				<ShoppingCart className="cursor-pointer w-6 h-6" />
+				{noOfProducts > 0 && (
+					<span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">
+						{noOfProducts}
+					</span>
+				)}
 			</Link>
 		</nav>
 	)

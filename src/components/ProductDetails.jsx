@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Stars from "./Stars";
 
-const ProductDetails = ({ addToCart }) => {
+const ProductDetails = ({ cart, addToCart }) => {
 	const { productId } = useParams();
 	console.log(productId);
 
@@ -47,7 +47,7 @@ const ProductDetails = ({ addToCart }) => {
 	return (
 		<>
 			<PromoBanner />
-			<NavBar />
+			<NavBar cart={cart} />
 			<main className="flex justify-center">
 				<div className="flex px-32 py-20 w-[90%] m-auto gap-10">
 					<div className="flex-1/3 bg-blush rounded-2xl">

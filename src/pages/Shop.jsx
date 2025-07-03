@@ -5,12 +5,12 @@ import ShopContainer from "../components/ShopContainer";
 
 import { useState } from "react";
 
-const Shop = ({ addToCart }) => {
+const Shop = ({ cart, addToCart }) => {
 	const [categoryURL, setCategoryURL] = useState("all");
 	return (
 		<>
 			<PromoBanner />
-			<NavBar setCategoryURL={setCategoryURL} />
+			<NavBar setCategoryURL={setCategoryURL} cart={cart} />
 			<ShopContainer categoryURL={categoryURL} setCategoryURL={setCategoryURL} addToCart={addToCart} />
 			<Footer />
 		</>

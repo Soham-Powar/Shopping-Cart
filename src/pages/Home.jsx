@@ -3,11 +3,11 @@ import PromoBanner from "../components/PromoBanner";
 import MainContainer from "../components/MainContainer";
 import Footer from "../components/Footer";
 
-const Home = () => {
+const Home = ({ cart }) => {
 	return (
 		<>
 			<PromoBanner />
-			<NavBar />
+			<NavBar cart={cart} />
 			<MainContainer />
 			<Footer />
 		</>
