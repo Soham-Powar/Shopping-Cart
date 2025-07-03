@@ -8,7 +8,7 @@ describe("NavBar component", () => {
 	it("should render navigation links", () => {
 		render(
 			<BrowserRouter>
-				<NavBar />
+				<NavBar cart={[]} />
 			</BrowserRouter>
 		);
 
@@ -19,5 +19,24 @@ describe("NavBar component", () => {
 		expect(screen.getByText("SHOP.EZ")).toBeInTheDocument();
 	});
 
+	it("should display number of items in cart", () => {
+		render(
+			<BrowserRouter>
+				<NavBar cart={[3, 4]} />
+			</BrowserRouter>
+		);
 
+		const cartItems = screen.getByText("2");
+		expect(cartItems).toBeInTheDocument();
+	});
+	it("should have a search input", () => {
+		render(
+			<BrowserRouter>
+				<NavBar cart={[]} />
+			</BrowserRouter>
+		);
+
+		const searchInput = screen.getByPlaceholderText("Search for products");
+		expect(searchInput).toBeInTheDocument();
+	});
 })
