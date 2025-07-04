@@ -1,11 +1,16 @@
-// App.jsx
-
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/routes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
-	const [cart, setCart] = useState([]);
+	const [cart, setCart] = useState(() => {
+		const storedCart = localStorage.getItem("cart");
+		return storedCart ? JSON.parse(storedCart) : [];
+	});
+
+	useEffect(() => {
+		localStorage.setItem("cart", JSON.stringify(cart));
+	}, [cart]);
 
 	const addToCart = (product) => {
 		setCart((prevCart) => {
