@@ -1,5 +1,5 @@
 function getDeliveryCharge(total) {
-	if (total > 100) {
+	if (total > 100 || total <= 0) {
 		return 0;
 	}
 	return 10;
