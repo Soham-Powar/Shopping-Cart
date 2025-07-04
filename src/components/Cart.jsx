@@ -1,29 +1,34 @@
-const Cart = ({ cart, removeFromCart }) => {
+import NavBar from "./NavBar";
+import Footer from "./Footer"
+
+import CartItem from "./CartItem";
+
+const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
 	console.log(cart);
 	return (
-		<div className="p-10">
-			<h2 className="text-3xl font-bold mb-6">Your Cart</h2>
-			{cart.length === 0 ? (
-				<p>Your cart is empty.</p>
-			) : (
-				<ul className="space-y-4">
-					{cart.map(item => (
-						<li key={item.id} className="flex justify-between items-center border-b pb-4">
-							<div>
-								<h3>{item.title}</h3>
-								<p>${item.price}</p>
-							</div>
-							<button
-								onClick={() => removeFromCart(item.id)}
-								className="bg-red-500 text-white px-4 py-1 rounded"
-							>
-								Remove
-							</button>
-						</li>
-					))}
-				</ul>
-			)}
-		</div>
+		<>
+			<NavBar cart={cart} />
+			<main className="flex px-50 py-15 gap-20">
+				<div className="flex-4/5">
+					<h1 className="font-[integralCF] text-4xl">Your Cart</h1>
+					<div className="pt-5">
+						<div className="bg-white p-6 rounded-xl border-blush border-2 flex flex-col">
+							{cart.length === 0 ? (
+								<p className="text-gray-500">Your cart is empty.</p>
+							) : (
+								cart.map(item => (
+									<CartItem key={item.id} item={item} removeFromCart={removeFromCart} addToCart={addToCart} decreaseQuantity={decreaseQuantity} />
+								))
+							)}
+						</div>
+					</div>
+				</div>
+				<div className="bg-violet-200 flex-1/5">
+					price details
+				</div>
+			</main>
+			<Footer />
+		</>
 	);
 }
 
