@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer"
-
+import PriceDetails from "./PriceDetails";
 import CartItem from "./CartItem";
 
 const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
@@ -9,7 +9,7 @@ const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
 		<>
 			<NavBar cart={cart} />
 			<main className="flex px-50 py-15 gap-20">
-				<div className="flex-4/5">
+				<div className="flex-3/4">
 					<h1 className="font-[integralCF] text-4xl">Your Cart</h1>
 					<div className="pt-5">
 						<div className="bg-white p-6 rounded-xl border-blush border-2 flex flex-col">
@@ -23,16 +23,13 @@ const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
 						</div>
 					</div>
 				</div>
-				<div className="bg-violet-200 flex-1/5">
-					price details
+				<div className="flex-1/4 pt-[60px]">
+					<PriceDetails cart={cart} />
 				</div>
 			</main>
 			<Footer />
 		</>
 	);
 }
-
-// increase quantity if added more times
-//change ui
 
 export default Cart;
