@@ -6,7 +6,7 @@ import NotFound from "../pages/NotFound";
 import Cart from "../components/Cart";
 import ProductDetails from "../components/ProductDetails";
 
-const router = (cart, addToCart, removeFromCart) => {
+const router = (cart, addToCart, removeFromCart, decreaseQuantity) => {
 	return createBrowserRouter([
 		{
 			path: "/",
@@ -23,7 +23,7 @@ const router = (cart, addToCart, removeFromCart) => {
 		},
 		{
 			path: "cart",
-			element: <Cart cart={cart} removeFromCart={removeFromCart} />
+			element: <Cart cart={cart} removeFromCart={removeFromCart} addToCart={addToCart} decreaseQuantity={decreaseQuantity} />
 		},
 	]);
 }
