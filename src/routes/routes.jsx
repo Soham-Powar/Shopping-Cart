@@ -10,7 +10,7 @@ const router = (cart, addToCart, removeFromCart, decreaseQuantity) => {
 	return createBrowserRouter([
 		{
 			path: "/",
-			element: <Home cart={cart} />,
+			element: <Home cart={cart} addToCart={addToCart} />,
 			errorElement: <NotFound />,
 		},
 		{

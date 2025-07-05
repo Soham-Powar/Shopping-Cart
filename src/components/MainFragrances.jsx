@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import ProductSkeleton from "./ProductSkeleton";
 
-const MainFragrances = () => {
+const MainFragrances = ({ addToCart }) => {
 	const [dataObject, setDataObject] = useState(null);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ const MainFragrances = () => {
 			<h2 className="text-3xl md:text-5xl font-[integralCF] pb-12 text-center">FRAGRANCES</h2>
 			<div className="flex flex-wrap gap-6 justify-center">
 				{dataObject?.products?.map((product) => (
-					<ProductCard data={product} key={product.id} />
+					<ProductCard data={product} addToCart={addToCart} key={product.id} />
 				))}
 			</div>
 			<div className="pt-10 flex justify-center">
