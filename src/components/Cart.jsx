@@ -4,7 +4,6 @@ import PriceDetails from "./PriceDetails";
 import CartItem from "./CartItem";
 
 const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
-	console.log(cart);
 	return (
 		<>
 			<NavBar cart={cart} />
