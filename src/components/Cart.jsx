@@ -8,7 +8,7 @@ const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
 	return (
 		<>
 			<NavBar cart={cart} />
-			<main className="flex px-50 py-15 gap-20">
+			<main className="flex flex-col md:flex-row px-5 md:px-50 py-15 gap-20">
 				<div className="flex-3/4">
 					<h1 className="font-[integralCF] text-4xl">Your Cart</h1>
 					<div className="pt-5">
@@ -23,7 +23,7 @@ const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex-1/4 pt-[60px]">
+				<div className="flex-1/4 md:pt-[60px]">
 					<PriceDetails cart={cart} />
 				</div>
 			</main>

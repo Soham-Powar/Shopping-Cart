@@ -4,7 +4,7 @@ import { Instagram, Linkedin, Github, Facebook } from "lucide-react"
 
 export default function Footer() {
 	return (
-		<footer className="bg-blush py-10 px-6 md:px-20">
+		<footer className="bg-blush py-10 pb-3 px-6 md:px-20">
 			<div className="flex flex-col md:flex-row justify-between gap-10">
 				<div className="max-w-md">
 					<h2 className="text-3xl font-[integralCF]">SHOP.EZ</h2>
