@@ -43,7 +43,7 @@ const MainFragrances = () => {
 
 	return (
 		<div className="pb-20 pt-16">
-			<h2 className="text-5xl font-[integralCF] pb-12 text-center">FRAGRANCES</h2>
+			<h2 className="text-3xl md:text-5xl font-[integralCF] pb-12 text-center">FRAGRANCES</h2>
 			<div className="flex flex-wrap gap-6 justify-center">
 				{dataObject?.products?.map((product) => (
 					<ProductCard data={product} key={product.id} />

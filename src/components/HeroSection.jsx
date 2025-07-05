@@ -5,7 +5,7 @@ export default function HeroSection() {
 	return (
 		<section
 			data-testid="hero-img"
-			className="h-[80vh] bg-contain bg-no-repeat bg-right bg-blush"
+			className="md:h-[80vh] bg-[length:180px] bg-right-bottom md:bg-contain bg-no-repeat md:bg-right bg-blush pb-8"
 			style={{ backgroundImage: `url(${landingBg})` }}
 		>
 			<HeroContent />

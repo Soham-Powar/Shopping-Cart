@@ -4,28 +4,30 @@ import { Instagram, Linkedin, Github, Facebook } from "lucide-react"
 
 export default function Footer() {
 	return (
-		<footer className="bg-blush relative flex py-13 px-50 justify-between">
-			<div>
-				<h2 className="text-3xl font-[integralCF]">SHOP.EZ</h2>
-				<p className="pt-6 text-gray-600">
-					Discover curated fashion at Shop.EZ — designed to match your style and enhance your confidence.
-				</p>
-				<div className="flex gap-3 pt-6">
-					<Instagram data-testid="lucide-icon" className="text-gray-600" />
-					<Linkedin data-testid="lucide-icon" className="text-gray-600" />
-					<Github data-testid="lucide-icon" className="text-gray-600" />
-					<Facebook data-testid="lucide-icon" className="text-gray-600" />
+		<footer className="bg-blush py-10 px-6 md:px-20">
+			<div className="flex flex-col md:flex-row justify-between gap-10">
+				<div className="max-w-md">
+					<h2 className="text-3xl font-[integralCF]">SHOP.EZ</h2>
+					<p className="pt-4 text-gray-600 leading-relaxed">
+						Discover curated fashion at Shop.EZ — designed to match your style and enhance your confidence.
+					</p>
+					<div className="flex gap-4 pt-6">
+						<Instagram className="hover:text-night transition-colors duration-200 cursor-pointer" />
+						<Linkedin className="hover:text-night transition-colors duration-200 cursor-pointer" />
+						<Github className="hover:text-night transition-colors duration-200 cursor-pointer" />
+						<Facebook className="hover:text-night transition-colors duration-200 cursor-pointer" />
+					</div>
+				</div>
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-5">
+					<FooterList heading="COMPANY" list={["About", "Careers", "Contact", "Features"]} />
+					<FooterList heading="HELP" list={["Customer Support", "Delivery Details", "Terms and Conditions", "Privacy Policy"]} />
+					<FooterList heading="FAQ" list={["Account", "Manage Deliveries", "Orders", "Payments"]} />
+					<FooterList heading="RESOURCES" list={["Free Ebooks", "Development Tutorial", "How to - Blog", "Youtube Playlist"]} />
 				</div>
 			</div>
-			<div className="flex gap-10  text-[14px]">
-				<FooterList heading="COMPANY" list={["About", "Careers", "Contact", "Features"]} />
-				<FooterList heading="HELP" list={["Customer Support", "Delivery Details", "Terms and Conditions", "Privacy Policy"]} />
-				<FooterList heading="FAQ" list={["Account", "Manage Deliveries", "Orders", "Payments"]} />
-				<FooterList heading="RESOURCES" list={["Free Ebooks", "Development Tutorial", "How to - Blog", "Youtube Playlist"]} />
-			</div>
-			<p className="absolute top-[90%] left-1/2 -translate-x-1/2 text-center text-gray-600 text-[12px]">
+			<div className="text-center pt-10 text-xs text-gray-500">
 				SHOP.EZ © 2025, All Rights Reserved
-			</p>
+			</div>
 		</footer>
 	)
 }
