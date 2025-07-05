@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const Filters = ({ setCategoryURL }) => {
 	const [categories, setCategories] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const [isOpen, setIsOpen] = useState(true);
 
 	useEffect(() => {
 		async function getCategories() {
@@ -23,14 +25,23 @@ const Filters = ({ setCategoryURL }) => {
 	}, []);
 
 	return (
-		<div className="px-5 py-7 border-blush border-2 rounded-2xl flex-1/4 h-min max-w-[300px]">
-			<h3 className="text-2xl font-bold pb-5">Categories</h3>
+		<div className="px-5 py-7 border-blush border-2 rounded-2xl w-full md:flex-1/4 h-min max-w-[300px]">
+			<div className="flex items-center justify-between pb-4">
+				<h3 className="text-xl md:text-2xl font-bold">Categories</h3>
+				<button
+					onClick={() => setIsOpen(!isOpen)}
+					aria-label="Toggle Category List"
+					className="text-night cursor-pointer"
+				>
+					{isOpen ? <ChevronUp /> : <ChevronDown />}
+				</button>
+			</div>
 
 			{loading && <p className="text-gray-500">Loading categories...</p>}
 			{error && <p className="text-red-500">Error loading categories: {error}</p>}
 
-			{!loading && !error && (
-				<ul className="flex flex-col gap-0.5">
+			{!loading && !error && isOpen && (
+				<ul className="flex flex-col gap-1">
 					<li
 						key={"all"}
 						onClick={() => setCategoryURL("all")}

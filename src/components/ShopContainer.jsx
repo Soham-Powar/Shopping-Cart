@@ -4,7 +4,7 @@ import Products from "./Products";
 const ShopContainer = ({ categoryURL, setCategoryURL, addToCart }) => {
 
 	return (
-		<main className="flex px-60 py-30 gap-5">
+		<main className="flex flex-col md:flex-row md:px-60 md:py-30 gap-5 items-center md:items-start">
 			<Filters setCategoryURL={setCategoryURL} />
 			<Products url={categoryURL} addToCart={addToCart} />
 		</main>
