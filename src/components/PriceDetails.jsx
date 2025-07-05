@@ -22,7 +22,7 @@ export default function PriceDetails({ cart }) {
 		<div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
 			<h2 className="text-xl font-bold mb-4">Order Summary</h2>
 
-			<div className="flex justify-between pt-5">
+			<div className="flex justify-between pt-5 gap-5">
 				<span className="text-gray-800">Subtotal</span>
 				<span className="font-bold">${subtotal.toFixed(2)}</span>
 			</div>
