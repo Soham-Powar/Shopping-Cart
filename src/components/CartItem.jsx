@@ -10,7 +10,7 @@ export default function CartItem({ item, removeFromCart, addToCart, decreaseQuan
 			</div>
 			<div className="flex flex-col justify-between relative w-full pr-16">
 				<div>
-					<h3 className="md:text-xl font-medium">{item.title}</h3>
+					<h3 className="md:text-xl md:font-medium">{item.title}</h3>
 					<p className="font-semibold md:text-xl">${item.price}</p>
 				</div>
 				<QuantityBtn item={item} addToCart={addToCart} decreaseQuantity={decreaseQuantity} />
