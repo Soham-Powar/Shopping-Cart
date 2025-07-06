@@ -16,7 +16,7 @@ const NavBar = ({ cart, setCategoryURL }) => {
 			</div>
 			<SearchBar setCategoryURL={setCategoryURL} />
 			<Link to="/cart" aria-label="Go to cart" className="relative">
-				<ShoppingCart className="cursor-pointer w-6 h-6" />
+				<ShoppingCart className="cursor-pointer w-6 h-6 hover:scale-120 transition-transform duration-500 ease-out delay-25" />
 				{noOfProducts > 0 && (
 					<span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">
 						{noOfProducts}

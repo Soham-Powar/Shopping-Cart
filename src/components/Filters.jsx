@@ -40,27 +40,32 @@ const Filters = ({ setCategoryURL }) => {
 			{loading && <p className="text-gray-500">Loading categories...</p>}
 			{error && <p className="text-red-500">Error loading categories: {error}</p>}
 
-			{!loading && !error && isOpen && (
-				<ul className="flex flex-col gap-1">
-					<li
-						key={"all"}
-						onClick={() => setCategoryURL("all")}
-						className="cursor-pointer hover:underline capitalize"
-					>
-						All
-					</li>
-					{categories.map((category) => (
+			{!loading && !error && (
+				<div
+					className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 max-h-0'
+						}`}
+				>
+					<ul className="flex flex-col gap-1">
 						<li
-							key={category.slug}
-							onClick={() => setCategoryURL(category.url)}
+							key={"all"}
+							onClick={() => setCategoryURL("all")}
 							className="cursor-pointer hover:underline capitalize"
 						>
-							{category.name}
+							All
 						</li>
-					))}
-				</ul>
+						{categories.map((category) => (
+							<li
+								key={category.slug}
+								onClick={() => setCategoryURL(category.url)}
+								className="cursor-pointer hover:underline capitalize"
+							>
+								{category.name}
+							</li>
+						))}
+					</ul>
+				</div>
 			)}
-		</div>
+		</div >
 	);
 };
 

@@ -19,7 +19,7 @@ export default function PriceDetails({ cart }) {
 	const total = +(subtotal - discount + deliveryFee).toFixed(2);
 
 	return (
-		<div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+		<div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-500">
 			<h2 className="text-xl font-bold mb-4">Order Summary</h2>
 
 			<div className="flex justify-between pt-5 gap-5">

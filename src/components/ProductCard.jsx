@@ -6,7 +6,7 @@ export default function ProductCard({ data, addToCart }) {
 	const productImage = data.images[0];
 
 	return (
-		<div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+		<div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col">
 			<Link to={`/product/${data.id}`}>
 				<img
 					src={productImage}
