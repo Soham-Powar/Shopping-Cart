@@ -8,7 +8,6 @@ import Stars from "./Stars";
 
 const ProductDetails = ({ cart, addToCart }) => {
 	const { productId } = useParams();
-	console.log(productId);
 
 	const [dataObject, setDataObject] = useState(null);
 	const [loading, setLoading] = useState(true);

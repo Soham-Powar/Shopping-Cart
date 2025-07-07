@@ -1,4 +1,4 @@
-import { Import, Trash2Icon } from "lucide-react"
+import { Trash2Icon } from "lucide-react"
 import QuantityBtn from "./QuantityBtn"
 
 export default function CartItem({ item, removeFromCart, addToCart, decreaseQuantity }) {

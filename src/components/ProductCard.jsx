@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShopContext } from "../App";
+import { ShopContext } from "../context/ShopContext";
 import { useContext } from "react";
 
 export default function ProductCard({ data }) {

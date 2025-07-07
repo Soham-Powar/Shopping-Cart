@@ -1,14 +1,8 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/routes";
 import { useState, useEffect } from "react";
-import { createContext } from "react";
 
-export const ShopContext = createContext({
-	cart: [],
-	addToCart: () => { },
-	removeFromCart: () => { },
-	decreaseQuantity: () => { },
-})
+import { ShopContext } from "./context/ShopContext";
 
 const App = () => {
 	const [cart, setCart] = useState(() => {

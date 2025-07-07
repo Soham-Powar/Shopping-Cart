@@ -3,7 +3,7 @@ import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ShopContext } from "../App";
+import { ShopContext } from "../context/ShopContext";
 
 const NavBar = ({ setCategoryURL }) => {
 	const { cart } = useContext(ShopContext);
