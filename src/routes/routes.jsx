@@ -6,27 +6,24 @@ import NotFound from "../pages/NotFound";
 import Cart from "../components/Cart";
 import ProductDetails from "../components/ProductDetails";
 
-const router = (cart, addToCart, removeFromCart, decreaseQuantity) => {
-	return createBrowserRouter([
-		{
-			path: "/",
-			element: <Home cart={cart} addToCart={addToCart} />,
-			errorElement: <NotFound />,
-		},
-		{
-			path: "shop",
-			element: <Shop cart={cart} addToCart={addToCart} />,
-		},
-		{
-			path: "product/:productId",
-			element: <ProductDetails cart={cart} addToCart={addToCart} />,
-		},
-		{
-			path: "cart",
-			element: <Cart cart={cart} removeFromCart={removeFromCart} addToCart={addToCart} decreaseQuantity={decreaseQuantity} />
-		},
-	]);
-}
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Home />,
+		errorElement: <NotFound />,
+	},
+	{
+		path: "shop",
+		element: <Shop />,
+	},
+	{
+		path: "product/:productId",
+		element: <ProductDetails />,
+	},
+	{
+		path: "cart",
+		element: <Cart />,
+	},
+]);
 
 export default router;
-

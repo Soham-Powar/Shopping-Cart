@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import NavLink from "./NavLink";
 import SearchBar from "./SearchBar";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../App";
 
-const NavBar = ({ cart, setCategoryURL }) => {
+const NavBar = ({ setCategoryURL }) => {
+	const { cart } = useContext(ShopContext);
 	const noOfProducts = cart.length;
 	return (
 		<nav className="bg-white py-5 flex flex-col md:flex-row p-3 gap-2 justify-around items-center border-gray-200 border-b-3">

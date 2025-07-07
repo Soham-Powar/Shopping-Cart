@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { ShopContext } from "../App";
+import { useContext } from "react";
 
-export default function ProductCard({ data, addToCart }) {
+export default function ProductCard({ data }) {
 	const productName = data.title;
 	const price = data.price;
 	const productImage = data.images[0];
+
+	const { addToCart } = useContext(ShopContext);
 
 	return (
 		<div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col">

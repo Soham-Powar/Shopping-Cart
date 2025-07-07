@@ -1,14 +1,14 @@
 import HeroSection from "./HeroSection"
 import MainFragrances from "./MainFragrances"
 
-export default function MainContainer({ addToCart }) {
+export default function MainContainer() {
 	return (
 		<main>
 			<section>
 				<HeroSection />
 			</section>
 			<section>
-				<MainFragrances addToCart={addToCart} />
+				<MainFragrances />
 			</section>
 		</main>
 	)

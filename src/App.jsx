@@ -1,6 +1,14 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/routes";
 import { useState, useEffect } from "react";
+import { createContext } from "react";
+
+export const ShopContext = createContext({
+	cart: [],
+	addToCart: () => { },
+	removeFromCart: () => { },
+	decreaseQuantity: () => { },
+})
 
 const App = () => {
 	const [cart, setCart] = useState(() => {
@@ -44,7 +52,9 @@ const App = () => {
 	};
 
 	return (
-		<RouterProvider router={router(cart, addToCart, removeFromCart, decreaseQuantity)} />
+		<ShopContext.Provider value={{ cart, addToCart, removeFromCart, decreaseQuantity }}>
+			<RouterProvider router={router} />
+		</ShopContext.Provider>
 	);
 }
 

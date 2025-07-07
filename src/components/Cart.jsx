@@ -2,8 +2,11 @@ import NavBar from "./NavBar";
 import Footer from "./Footer"
 import PriceDetails from "./PriceDetails";
 import CartItem from "./CartItem";
+import { ShopContext } from "../App";
+import { useContext } from "react";
 
-const Cart = ({ cart, removeFromCart, addToCart, decreaseQuantity }) => {
+const Cart = () => {
+	const { cart, removeFromCart, addToCart, decreaseQuantity } = useContext(ShopContext);
 	return (
 		<>
 			<NavBar cart={cart} />
