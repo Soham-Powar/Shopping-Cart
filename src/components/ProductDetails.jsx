@@ -1,13 +1,15 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ShopContext } from "../context/ShopContext";
 
 import PromoBanner from "./PromoBanner";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Stars from "./Stars";
 
-const ProductDetails = ({ cart, addToCart }) => {
+const ProductDetails = () => {
 	const { productId } = useParams();
+	const { cart, addToCart } = useContext(ShopContext)
 
 	const [dataObject, setDataObject] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -56,8 +58,8 @@ const ProductDetails = ({ cart, addToCart }) => {
 						<h1 className="text-4xl font-bold font-[integralCF] pb-5">{dataObject.title}</h1>
 						<Stars rating={dataObject.rating} />
 						<p className="text-2xl font-semibold text-night pt-5">${dataObject.price}</p>
-						<p className="text-lg text-gray-700 mb-2 pt-2">{dataObject.description}</p>
-						<button onClick={() => addToCart(dataObject)} className="mt-4 bg-night text-white px-4 py-2 rounded-xl hover:bg-gray-900 cursor-pointer transition-colors">
+						<p className="text-lg text-gray-700 mb-2 py-2">{dataObject.description}</p>
+						<button onClick={() => addToCart(dataObject)} className="bg-night text-white px-4 py-3 rounded-xl hover:bg-gray-900 cursor-pointer transition-colors">
 							Add to Cart
 						</button>
 					</div>
