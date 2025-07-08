@@ -1,16 +1,20 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import NavBar from "../src/components/NavBar";
+import { ShopContext } from "../src/context/ShopContext";
 
-import NavBar from "../src/components/NavBar"
+const renderWithContext = (ui, { cart = [], setCategoryURL = () => { } } = {}) => {
+	return render(
+		<ShopContext.Provider value={{ cart, setCategoryURL }}>
+			<BrowserRouter>{ui}</BrowserRouter>
+		</ShopContext.Provider>
+	);
+};
 
 describe("NavBar component", () => {
 	it("should render navigation links", () => {
-		render(
-			<BrowserRouter>
-				<NavBar cart={[]} />
-			</BrowserRouter>
-		);
+		renderWithContext(<NavBar />);
 
 		expect(screen.getByText("Home")).toBeInTheDocument();
 		expect(screen.getByText("Shop")).toBeInTheDocument();
@@ -20,23 +24,16 @@ describe("NavBar component", () => {
 	});
 
 	it("should display number of items in cart", () => {
-		render(
-			<BrowserRouter>
-				<NavBar cart={[3, 4]} />
-			</BrowserRouter>
-		);
+		renderWithContext(<NavBar />, { cart: [1, 2, 3] });
 
-		const cartItems = screen.getByText("2");
+		const cartItems = screen.getByText("3");
 		expect(cartItems).toBeInTheDocument();
 	});
+
 	it("should have a search input", () => {
-		render(
-			<BrowserRouter>
-				<NavBar cart={[]} />
-			</BrowserRouter>
-		);
+		renderWithContext(<NavBar />);
 
 		const searchInput = screen.getByPlaceholderText("Search for products");
 		expect(searchInput).toBeInTheDocument();
 	});
-})
+});

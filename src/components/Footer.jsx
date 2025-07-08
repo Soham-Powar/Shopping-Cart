@@ -12,11 +12,24 @@ export default function Footer() {
 						Discover curated fashion at Shop.EZ — designed to match your style and enhance your confidence.
 					</p>
 					<div className="flex gap-4 pt-6">
-						<Instagram className="hover:text-night transition-colors duration-200 cursor-pointer" />
-						<Linkedin className="hover:text-night transition-colors duration-200 cursor-pointer" />
-						<Github className="hover:text-night transition-colors duration-200 cursor-pointer" />
-						<Facebook className="hover:text-night transition-colors duration-200 cursor-pointer" />
+						<Instagram
+							className="hover:text-night transition-colors duration-200 cursor-pointer"
+							data-testid="lucide-icon"
+						/>
+						<Linkedin
+							className="hover:text-night transition-colors duration-200 cursor-pointer"
+							data-testid="lucide-icon"
+						/>
+						<Github
+							className="hover:text-night transition-colors duration-200 cursor-pointer"
+							data-testid="lucide-icon"
+						/>
+						<Facebook
+							className="hover:text-night transition-colors duration-200 cursor-pointer"
+							data-testid="lucide-icon"
+						/>
 					</div>
+
 				</div>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-5">
 					<FooterList heading="COMPANY" list={["About", "Careers", "Contact", "Features"]} />
