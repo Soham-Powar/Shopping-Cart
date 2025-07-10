@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 function getDeliveryCharge(total) {
 	if (total > 100 || total <= 0) {
 		return 0;
@@ -7,14 +9,18 @@ function getDeliveryCharge(total) {
 
 export default function PriceDetails({ cart }) {
 
-	const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+	const subtotal = useMemo(() => {
+		return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+	}, [cart]);
 
 	const deliveryFee = getDeliveryCharge(subtotal);
 
-	const discount = cart.reduce((acc, item) => {
-		const itemDiscount = (item.price * item.discountPercentage / 100) * item.quantity;
-		return acc + itemDiscount;
-	}, 0);
+	const discount = useMemo(() => {
+		return cart.reduce((acc, item) => {
+			const itemDiscount = (item.price * item.discountPercentage / 100) * item.quantity;
+			return acc + itemDiscount;
+		}, 0);
+	}, [cart]);
 
 	const total = +(subtotal - discount + deliveryFee).toFixed(2);
 
